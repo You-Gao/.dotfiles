@@ -219,35 +219,27 @@ elif [ $(date '+%u') -eq 2 ] || [ $(date '+%u') -eq 4 ]; then
 
 if [ $current_hour -eq 9 ] && [ $current_minute -ge 30 ]; then
 
-echo "Development on the Ground"
+echo "Foundations of ML"
 
 elif [ $current_hour -eq 10 ] && [ $current_minute -lt 45 ]; then
 
-echo "Development on the Ground"
+echo "Foundations of ML"
 
-elif [ $current_hour -eq 11 ]; then
+elif [ $current_hour -eq 12 ]; then
 
-echo "Global Development Theory 1"
+echo "Discrete Math 2"
 
-elif [ $current_hour -eq 12 ] && [ $current_minute -lt 15 ]; then
+elif [ $current_hour -eq 13 ] && [ $current_minute -lt 45 ]; then
 
-echo "Global Development Theory 1"
+echo "Discrete Math 2"
 
 elif [ $current_hour -eq 14 ]; then
 
-echo "Compilers"
+echo "Applied Rsrch in Global Studies"
 
 elif [ $current_hour -eq 15 ] && [ $current_minute -lt 15 ]; then
 
-echo "Compilers"
-
-elif [ $current_hour -eq 15 ] && [ $current_minute -ge 30 ]; then
-
-echo "Defense Against the Dark Arts"
-
-elif [ $current_hour -eq 16 ] && [ $current_minute -lt 45 ]; then
-
-echo "Defense Against the Dark Arts"
+echo "Applied Rsrch in Global Studies"
 
 else
 
@@ -257,23 +249,19 @@ fi
 
 
 
-# Check if it's Wednesday
+# Check if it's Wednesday or Monday
 
-elif [ $(date '+%u') -eq 3 ]; then
+elif [ $(date '+%u') -eq 3 ] || [ $(date '+%u') -eq 1] ; then
 
 # Performance, Memory, and Materiality class schedule
 
 if [ $current_hour -eq 15 ] && [ $current_minute -ge 30 ]; then
 
-echo "Performance, Memory, and Materiality"
+echo "Data Systems"
 
-elif [ $current_hour -eq 16 ] || [ $current_hour -eq 17 ]; then
+elif [ $current_hour -eq 16 ] || [ $current_hour -lt 45 ]; then
 
-echo "Performance, Memory, and Materiality"
-
-elif [ $current_hour -eq 18 ] && [ $current_minute -lt 0 ]; then
-
-echo "Performance, Memory, and Materiality"
+echo "Data Systems"
 
 else
 
@@ -292,16 +280,13 @@ fi
 }
 
 
-
-
-
 # Define your variables
 
 time=$(date +"%Y %H:%M:%S %p")
 
 class=$(choose_class)
 
-weather=$(timeout 1 curl -s 'wttr.in?format=%t' || echo "API DOWN")
+weather=$(timeout 1 curl -s 'wttr.in?format=%t') 
 
 weather_no_spaces="${weather// /}"
 
@@ -403,3 +388,4 @@ fi
 ## better-history 
 if [ -f /home/henry/.config/synth-shell/better-history.sh ] && [ -n "$( echo $- | grep i )" ]; then source /home/henry/.config/synth-shell/better-history.sh 
 fi
+export PATH="$HOME/omnisharp:$PATH"
