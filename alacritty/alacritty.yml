@@ -1,0 +1,52 @@
+# Alacritty Configuration
+
+window:
+  background_opacity: 0.7
+  reverse_video: true
+
+font:
+  normal:
+    family: "Noto Sans Mono"
+    size: 18.0
+  bold:
+    family: "Noto Sans Mono"
+    style: Bold
+  italic:
+    family: "Noto Sans Mono"
+    style: Italic
+  emoji:
+    family: "Noto Color Emoji"
+
+colors:
+  primary:
+    background: '#FFFFFF'
+    foreground: '#FFFFFF'
+  normal:
+    black:   '#222D31'
+    red:     '#ab4642'
+    green:   '#7E807E'
+    yellow:  '#f7ca88'
+    blue:    '#7cafc2'
+    magenta: '#ba8baf'
+    cyan:    '#1ABB9B'
+    white:   '#d8d8d8'
+  bright:
+    black:   '#585858'
+    red:     '#ab4642'
+    green:   '#8D8F8D'
+    yellow:  '#f7ca88'
+    blue:    '#7cafc2'
+    magenta: '#ba8baf'
+    cyan:    '#1ABB9B'
+    white:   '#f8f8f8'
+
+cursor:
+  color: '#FFFFFF'
+
+scrollback:
+  lines: 5000
+
+key_bindings:
+  - { key: V, mods: Shift|Control, action: Paste }
+  - { key: C, mods: Shift|Control, action: Copy }
+

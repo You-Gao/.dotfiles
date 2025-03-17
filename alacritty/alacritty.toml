@@ -1,0 +1,44 @@
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Shift|Control"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Shift|Control"
+
+[colors.bright]
+black = "#585858"
+blue = "#7cafc2"
+cyan = "#1ABB9B"
+green = "#8D8F8D"
+magenta = "#ba8baf"
+red = "#ab4642"
+white = "#f8f8f8"
+yellow = "#f7ca88"
+
+[colors.normal]
+black = "#222D31"
+blue = "#7cafc2"
+cyan = "#1ABB9B"
+green = "#7E807E"
+magenta = "#ba8baf"
+red = "#ab4642"
+white = "#d8d8d8"
+yellow = "#f7ca88"
+
+[colors.primary]
+background = "#000000"
+foreground = "#FFFFFF"
+
+[font]
+normal.family = "Terminess Nerd Font Mono"
+bold.family = "Terminess Nerd Font Mono"
+italic.family = "Terminess Nerd Font Mono"
+bold_italic.family = "Terminess Nerd Font Mono"
+size = 24
+
+[window]
+opacity = 0.2
+

@@ -194,87 +194,44 @@ current_hour=${current_hour#0}
 current_minute=${current_minute#0}
 
 
-
-# If it's before 7:00, it's not time for class
-
 if [ $current_hour -lt 7 ]; then
-
-echo "Go To Bed"
-
-
-
+    echo "Go To Bed"
+    
 # Check if it's a weekend (Saturday or Sunday)
-
 elif [ $(date '+%u') -gt 5 ]; then
-
-echo "Go Touch Grass"
-
-
+    echo "Go Touch Grass"
 
 # Check if it's Tuesday or Thursday
-
 elif [ $(date '+%u') -eq 2 ] || [ $(date '+%u') -eq 4 ]; then
-
-# Class schedule for Tuesday and Thursday
-
-if [ $current_hour -eq 9 ] && [ $current_minute -ge 30 ]; then
-
-echo "Foundations of ML"
-
-elif [ $current_hour -eq 10 ] && [ $current_minute -lt 45 ]; then
-
-echo "Foundations of ML"
-
-elif [ $current_hour -eq 12 ]; then
-
-echo "Discrete Math 2"
-
-elif [ $current_hour -eq 13 ] && [ $current_minute -lt 45 ]; then
-
-echo "Discrete Math 2"
-
-elif [ $current_hour -eq 14 ]; then
-
-echo "Applied Rsrch in Global Studies"
-
-elif [ $current_hour -eq 15 ] && [ $current_minute -lt 15 ]; then
-
-echo "Applied Rsrch in Global Studies"
-
-else
-
-echo "Work on Class Work"
-
-fi
-
-
+    # Class schedule for Tuesday and Thursday
+    if [ $current_hour -eq 9 ] && [ $current_minute -ge 30 ]; then
+        echo "Foundations of ML"
+    elif [ $current_hour -eq 10 ] && [ $current_minute -lt 45 ]; then
+        echo "Foundations of ML"
+    elif [ $current_hour -eq 12 ]; then
+        echo "Discrete Math 2"
+    elif [ $current_hour -eq 13 ] && [ $current_minute -lt 45 ]; then
+        echo "Discrete Math 2"
+    elif [ $current_hour -eq 14 ]; then
+        echo "Applied Rsrch in Global Studies"
+    elif [ $current_hour -eq 15 ] && [ $current_minute -lt 15 ]; then
+        echo "Applied Rsrch in Global Studies"
+    else
+        echo "Work on Class Work"
+    fi
 
 # Check if it's Wednesday or Monday
-
-elif [ $(date '+%u') -eq 3 ] || [ $(date '+%u') -eq 1] ; then
-
-# Performance, Memory, and Materiality class schedule
-
-if [ $current_hour -eq 15 ] && [ $current_minute -ge 30 ]; then
-
-echo "Data Systems"
-
-elif [ $current_hour -eq 16 ] || [ $current_hour -lt 45 ]; then
-
-echo "Data Systems"
+elif [ $(date '+%u') -eq 3 ] || [ $(date '+%u') -eq 1 ]; then
+    if [ $current_hour -eq 15 ] && [ $current_minute -ge 30 ]; then
+        echo "Data Systems"
+    elif [ $current_hour -eq 16 ] || [ $current_minute -lt 45 ]; then
+        echo "Data Systems"
+    else
+        echo "Work on Class Work"
+    fi
 
 else
-
-echo "Work on Class Work"
-
-fi
-
-
-
-else
-
-echo "Check Habitica"
-
+    echo "Check Habitica"
 fi
 
 }
@@ -287,6 +244,11 @@ time=$(date +"%Y %H:%M:%S %p")
 class=$(choose_class)
 
 weather=$(timeout 1 curl -s 'wttr.in?format=%t') 
+
+if [[ "$weather" == *Unknown* ]]; then
+    weather=" "
+fi
+
 
 weather_no_spaces="${weather// /}"
 
@@ -357,11 +319,11 @@ echo -e "\033[1;37m"
 if [ "$terminal_width" -ge "$half_terminal_width" ]; then
 # Print the aligned text
 
-echo -e "================================================ Welcome Henry! ================================================="
-echo -e "||                                                                                                             ||"
+echo -e "================================= Welcome Henry! ===================================="
+echo -e "||                                                                                 ||"
 print_aligned_text "Time: ${time}" "Class: ${class}" "Weather: ${weather_no_spaces}"
-echo -e "||                                                                                                             ||"
-echo -e "================================================================================================================="
+echo -e "||                                                                                 ||"
+echo -e "====================================================================================="
 echo ""
 
 fi
@@ -388,4 +350,7 @@ fi
 ## better-history 
 if [ -f /home/henry/.config/synth-shell/better-history.sh ] && [ -n "$( echo $- | grep i )" ]; then source /home/henry/.config/synth-shell/better-history.sh 
 fi
+
 export PATH="$HOME/omnisharp:$PATH"
+export PATH="/home/henry/.local/share/gem/ruby/3.3.0/bin:$PATH"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/henry/.bundle/ruby/3.3.0/gems/sassc-2.4.0/ext"
