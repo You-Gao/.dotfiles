@@ -1,4 +1,4 @@
-# i3-Configs
+# .dotfiles
 i can't do this again, my most important changes
 
 ## Important Things
