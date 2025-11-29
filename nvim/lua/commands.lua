@@ -19,3 +19,13 @@ vim.api.nvim_create_autocmd('WinClosed', {
 })
 
 vim.api.nvim_set_keymap('n', '<C-Tab>', ':bn<CR>', { noremap = true, silent = true })
+
+-- Delete current buffer with Ctrl+w
+vim.api.nvim_set_keymap('n', '<C-w>', ':bd<CR>', { noremap = true, silent = true })
+
+-- Open NeoTree with Ctrl+Shift+e
+vim.api.nvim_set_keymap('n', '<C-S-e>', ':Neotree toggle<CR>', { noremap = true, silent = true })
+
+-- Save current buffer with Ctrl+s
+vim.api.nvim_set_keymap('n', '<C-s>', ':w<CR>', { noremap = true, silent = true })
+

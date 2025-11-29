@@ -18,3 +18,8 @@ vim.o.wildmenu = true          -- Vim command autocompletes
 -- Enable features for plugins
 vim.opt.termguicolors = true
 
+-- Enable syntax-based folding
+vim.opt.foldmethod = "syntax"
+vim.opt.foldlevel = 99
+vim.opt.foldenable = true
+

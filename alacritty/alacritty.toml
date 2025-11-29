@@ -8,6 +8,16 @@ action = "Copy"
 key = "C"
 mods = "Shift|Control"
 
+[[keyboard.bindings]]
+chars = "\u001B[13;2u"
+key = "Return"
+mods = "Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[13;5u"
+key = "Return"
+mods = "Control"
+
 [colors.bright]
 black = "#585858"
 blue = "#7cafc2"
