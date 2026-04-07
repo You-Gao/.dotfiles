@@ -27,7 +27,7 @@ font xft:URWGothic-Book 16
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminal
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -44,6 +44,7 @@ bindsym $mod+z exec --no-startup-id morc_menu
 
 exec --no-startup-id volumeicon
 bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
+exec --no-startup-id ~/Downloads/activitywatch/aw-qt
 #exec --no-startup-id pulseaudio
 #exec --no-startup-id pa-applet
 #bindsym $mod+Ctrl+m exec pavucontrol
@@ -141,14 +142,14 @@ bindsym $mod+Ctrl+Left workspace prev
 # to display names or symbols instead of plain workspace numbers you can use
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
-set $ws1 1:Google
-set $ws2 2:PDF
-set $ws3 3:Joplin
-set $ws4 4:Terminal
-set $ws5 5:Habitica
-set $ws6 6:Docker
-set $ws7 7:Leisure
-set $ws8 8
+set $ws1 "1:1: Widgets"
+set $ws2 "2:2: Joplin"
+set $ws3 "3:3: Browser"
+set $ws4 "4:4: Terminal"
+set $ws5 "5:5: PDF"
+# set $ws6 6:Docker
+# set $ws7 7:Leisure
+# set $ws8 8
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -183,8 +184,11 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 # Open applications on specific workspaces
 # assign [class="Thunderbird"] $ws1
 # assign [class="Pale moon"] $ws2
-# assign [class="Pcmanfm"] $ws3
-# assign [class="Skype"] $ws5
+
+assign [class="Joplin"] $ws2
+assign [class="Chromium"] $ws3
+assign [class="Alacritty"] $ws4
+assign [class="MuPDF"] $ws5
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
@@ -339,16 +343,16 @@ bar {
 	strip_workspace_numbers yes
 
     colors {
-        background #67C6E3
-        statusline #000000
-        separator  #DFF5FF
+        background        #c0c5ce
+        statusline        #343d46
+        separator         #343d46
 
-#                      border  backgr. text
-        focused_workspace  #000000 #af6df9 #FFFFFF
-        active_workspace   #595B5B #353836 #FDF6E3
-        inactive_workspace #000000 #6408cc #222021
-        binding_mode       #16a085 #2C2C2C #F9FAF9
-        urgent_workspace   #16a085 #FDF6E3 #E5201D
+        #       border     backgr.   text
+        focused_workspace  #343d46   #c0c5ce   #FFFFFF
+        active_workspace   #c0c5ce   #343d46   #FDF6E3
+        inactive_workspace #343d46   #c0c5ce   #222021
+        binding_mode       #343d46   #c0c5ce   #F9FAF9
+        urgent_workspace   #343d46   #c0c5ce   #E5201D
     }
 }
 
