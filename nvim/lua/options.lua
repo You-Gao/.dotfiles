@@ -14,6 +14,7 @@ vim.opt.hlsearch = true        -- Highlight search results
 vim.opt.clipboard = "unnamedplus" -- Use system clipboard
 vim.opt.cursorline = true      -- Highlight current line
 vim.o.wildmenu = true          -- Vim command autocompletes
+vim.opt.autochdir = true       -- Sets cwd to the file
 
 -- Enable features for plugins
 vim.opt.termguicolors = true
@@ -23,3 +24,5 @@ vim.opt.foldmethod = "syntax"
 vim.opt.foldlevel = 99
 vim.opt.foldenable = true
 
+-- Leader
+vim.g.mapleader = " "
