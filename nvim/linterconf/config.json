@@ -1,0 +1,8 @@
+{
+  "checks": {
+    "typography": true,
+    "typography.symbols": false,
+    "typography.symbols.curly_quotes": false,
+    "typography.punctuation.hyperbole": false
+  }
+}

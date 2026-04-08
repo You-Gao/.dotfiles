@@ -1,0 +1,5 @@
+# Disable some built-in rules
+config:
+  default: true
+  MD013: false
+
