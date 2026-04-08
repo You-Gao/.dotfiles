@@ -29,7 +29,7 @@ vim.pack.add({
 })
 
 vim.api.nvim_create_autocmd("FileType", { -- Ensure treesitter parser starts
-  pattern = { "python", "lua", "markdown", "html", "javascript", "css"},
+  pattern = { "python", "lua", "markdown" },
   callback = function()
     vim.treesitter.start()
   end,
@@ -96,6 +96,8 @@ require('keybinds')
 vim.cmd.colorscheme('koda')
 
 local capabilities = require("blink.cmp").get_lsp_capabilities()
-vim.lsp.config('*', { capabilities = capabilities })
-local language_servers = {"lua_ls", "pyright", "marksman", "html", "ts_ls", "cssls"}
-vim.lsp.enable(language_servers)
+vim.lsp.enable({ 'lua_ls' }, { capabilities = capabilities})
+vim.lsp.enable({ 'pyright' }, { capabilities = capabilities})
+vim.lsp.enable({ 'marksman' }, { capabilities = capabilities})
+
+
