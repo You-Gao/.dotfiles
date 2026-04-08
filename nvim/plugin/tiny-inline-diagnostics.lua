@@ -27,7 +27,7 @@ require("tiny-inline-diagnostic").setup({
     options = {
         -- Display the source of diagnostics (e.g., "lua_ls", "pyright")
         show_source = {
-            enabled = false,           -- Enable showing source names
+            enabled = true,           -- Enable showing source names
             if_many = false,           -- Only show source if multiple sources exist for the same diagnostic
         },
 

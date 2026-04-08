@@ -6,7 +6,7 @@ local opts = { noremap = true, silent = true }
 -- PERSONAL
 map('n', '<C-d>', '<Cmd>BufferDelete<CR>', opts)
 map('n', '<C-s>', ':w<CR>', opts)
-map('n', '<ESC>', '<Cmd>:q<CR>', opts)
+map('n', 'q', '<Cmd>:q<CR>', opts)
 
 map('n', 'cd', ':cd %:p:h<CR>', opts)
 map('n', 'bo', ':browse oldfiles<CR>', opts)
